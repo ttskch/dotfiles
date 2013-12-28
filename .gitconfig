@@ -11,3 +11,5 @@
         br = branch
         lg = log --oneline
         mg = merge --no-ff
+[merge]
+	tool = opendiff
