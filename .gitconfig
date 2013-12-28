@@ -1,0 +1,12 @@
+[user]
+        name = Takashi Kanemoto
+        email = t-kanemoto@quartet-mail.com
+[core]
+        excludesfile = ~/.gitignore_global
+[color]
+        ui = auto
+[alias]
+        st = status
+        ci = commit -m
+        br = branch
+        log = log --oneline
