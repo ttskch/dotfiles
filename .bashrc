@@ -41,5 +41,3 @@ alias ht="cd ~/Data/workspace/htdocs"
 alias console="php app/console"
 alias composer="php ~/Data/workspace/htdocs/composer.phar"
 alias g="git"
-
-cd ~
