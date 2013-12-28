@@ -9,4 +9,5 @@
         st = status
         ci = commit -m
         br = branch
-        log = log --oneline
+        lg = log --oneline
+        mg = merge --no-ff
