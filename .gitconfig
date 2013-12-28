@@ -1,15 +1,16 @@
 [user]
-        name = Takashi Kanemoto
-        email = t-kanemoto@quartet-mail.com
+	name = Takashi Kanemoto
+	email = t-kanemoto@quartet-mail.com
 [core]
-        excludesfile = ~/.gitignore_global
+	excludesfile = ~/.gitignore_global
 [color]
-        ui = auto
+	ui = auto
 [alias]
-        st = status
-        ci = commit -m
-        br = branch
-        lg = log --oneline
-        mg = merge --no-ff
+	st = status
+	ci = commit -m
+	br = branch
+	lg = log --oneline
+	mg = merge --no-ff
+	df = diff --stat
 [merge]
 	tool = opendiff
