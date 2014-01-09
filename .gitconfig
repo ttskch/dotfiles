@@ -8,8 +8,10 @@
 [alias]
 	st = status
 	ci = commit -m
+	co = checkout
+	cb = checkout -b
 	br = branch
-	lg = log --oneline
+	ll = log --decorate --oneline
 	mg = merge --no-ff
 	df = diff --stat
 [merge]
