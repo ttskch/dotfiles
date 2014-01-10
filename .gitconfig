@@ -11,6 +11,7 @@
 	ci = commit -m
 	co = checkout
 	cb = checkout -b
+	cm = checkout master
 	br = branch
 	ll = log --decorate --oneline
 	mg = merge --no-ff
