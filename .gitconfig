@@ -6,6 +6,7 @@
 [color]
 	ui = auto
 [alias]
+	ad = add .
 	st = status
 	ci = commit -m
 	co = checkout
@@ -13,6 +14,7 @@
 	br = branch
 	ll = log --decorate --oneline
 	mg = merge --no-ff
+	mt = mergeto
 	df = diff --stat
 [merge]
 	tool = opendiff
