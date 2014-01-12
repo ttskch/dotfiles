@@ -17,5 +17,6 @@
 	mg = merge --no-ff
 	mt = mergeto
 	df = diff --stat
+	ls = ls-files
 [merge]
 	tool = opendiff
