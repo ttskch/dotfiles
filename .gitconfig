@@ -3,6 +3,7 @@
 	email = t-kanemoto@quartet-mail.com
 [core]
 	excludesfile = ~/.gitignore_global
+	precomposeunicode = true
 [color]
 	ui = auto
 [alias]
