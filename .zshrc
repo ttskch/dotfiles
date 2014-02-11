@@ -7,6 +7,7 @@ export C_INCLUDE_PATH="/usr/include/"
 
 PATH="/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:~/scripts:.:$PATH"
 PATH="$PATH:/usr/local/share/npm/bin"   # for npm apps.
+PATH="$PATH:~/.gem/ruby/2.0.0/bin"
 export PATH
 
 # 補完機能の強化.
