@@ -15,6 +15,7 @@
 	cb = checkout -b
 	cm = checkout master
 	br = branch
+	log = log --decorate
 	ll = log --decorate --oneline
 	mg = merge --no-ff
 	mt = mergeto
