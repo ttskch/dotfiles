@@ -21,5 +21,7 @@
 	mt = mergeto
 	df = diff --stat
 	ls = ls-files
+	re = remote
+	rmd = !git ls-files --deleted | xargs git rm 
 [merge]
 	tool = opendiff
