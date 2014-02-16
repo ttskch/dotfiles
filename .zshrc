@@ -5,9 +5,9 @@ export LANG="ja_JP.UTF-8"
 export JLESSCHARSET="japanese-sjis"
 export C_INCLUDE_PATH="/usr/include/"
 
-PATH="/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:~/scripts:.:$PATH"
+PATH="$PATH:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:."
 PATH="$PATH:/usr/local/share/npm/bin"   # for npm apps.
-PATH="$PATH:~/.gem/ruby/2.0.0/bin"
+PATH=${PATH}:~/.gem/ruby/2.0.0/bin      # for gems.
 export PATH
 
 # 補完機能の強化.
@@ -79,6 +79,7 @@ alias cp="cp -p"
 alias mkdir="mkdir -p"
 alias x="exit"
 alias ht="cd ~/Data/workspace/htdocs"
+alias dt="cd ~/Dropbox/Sync/dotfiles"
 alias console="php app/console"
 alias g="git"
 alias redis-server-start="redis-server /usr/local/etc/redis.conf"
