@@ -5,9 +5,9 @@ export LANG="ja_JP.UTF-8"
 export JLESSCHARSET="japanese-sjis"
 export C_INCLUDE_PATH="/usr/include/"
 
-PATH="$PATH:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:."
-PATH="$PATH:/usr/local/share/npm/bin"   # for npm apps.
-PATH=${PATH}:~/.gem/ruby/2.0.0/bin      # for gems.
+PATH=/usr/local/bin:/usr/bin:$PATH
+PATH=/usr/local/share/npm/bin:$PATH   # for npm apps.
+PATH=~/.gem/ruby/2.0.0/bin:$PATH      # for gems.
 export PATH
 
 # 補完機能の強化.
