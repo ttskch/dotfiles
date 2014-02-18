@@ -24,6 +24,6 @@
 	re = remote
 	pl = pull
 	ps = push
-	rmd = !git ls-files --deleted | xargs git rm
+	rmd = !git rm $(git ls-files --deleted)
 [merge]
 	tool = opendiff
