@@ -5,6 +5,7 @@
 	excludesfile = ~/.gitignore_global
 	precomposeunicode = true
 	quotepath = false
+	autocrlf = input
 [color]
 	ui = auto
 [alias]
