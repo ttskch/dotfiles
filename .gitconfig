@@ -6,6 +6,7 @@
 	precomposeunicode = true
 	quotepath = false
 	autocrlf = input
+	ignorecase = false
 [color]
 	ui = auto
 [alias]
