@@ -5,9 +5,11 @@ export LANG="ja_JP.UTF-8"
 export JLESSCHARSET="japanese-sjis"
 export C_INCLUDE_PATH="/usr/include/"
 
+export GEM_HOME=$HOME/.gem
+
 PATH=/usr/local/bin:/usr/bin:$PATH
 PATH=/usr/local/share/npm/bin:$PATH   # for npm apps.
-PATH=~/.gem/ruby/2.0.0/bin:$PATH      # for gems.
+PATH=$HOME/.gem/ruby/2.0.0/bin:$PATH      # for gems.
 export PATH
 
 # 補完機能の強化.
