@@ -29,3 +29,5 @@
 	rmd = !git rm $(git ls-files --deleted)
 [merge]
 	tool = opendiff
+[push]
+	default = upstream
