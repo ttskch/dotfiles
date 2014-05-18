@@ -8,8 +8,9 @@ export C_INCLUDE_PATH="/usr/include/"
 export GEM_HOME=$HOME/.gem
 
 PATH=/usr/local/bin:/usr/bin:$PATH
+PATH=/usr/local/Cellar/httpd/2.2.27/sbin:$PATH   # for apache from brew.
 PATH=/usr/local/share/npm/bin:$PATH   # for npm apps.
-PATH=$HOME/.gem/ruby/2.0.0/bin:$PATH      # for gems.
+PATH=$HOME/.gem/ruby/2.0.0/bin:$PATH   # for gems.
 export PATH
 
 # 補完機能の強化.
