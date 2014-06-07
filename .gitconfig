@@ -27,6 +27,7 @@
 	pl = pull
 	ps = push
 	rmd = !git rm $(git ls-files --deleted)
+	adw = !git diff -w --no-color | git apply --cached
 [merge]
 	tool = opendiff
 [push]
