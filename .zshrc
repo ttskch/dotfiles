@@ -1,89 +1,82 @@
-export TMPDIR="/tmp"
-export TZ="JST-09"
-export MAKE_MODE="unix"
-export LANG="ja_JP.UTF-8"
-export JLESSCHARSET="japanese-sjis"
-export C_INCLUDE_PATH="/usr/include/"
+# Path to your oh-my-zsh installation.
+export ZSH=$HOME/.oh-my-zsh
 
-export GEM_HOME=$HOME/.gem
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+ZSH_THEME="robbyrussell"
 
-PATH=/usr/local/bin:/usr/bin:$PATH
-PATH=/usr/local/Cellar/httpd/2.2.27/sbin:$PATH   # for apache from brew.
-PATH=/usr/local/share/npm/bin:$PATH   # for npm apps.
-PATH=$HOME/.gem/bin:$PATH   # for gems.
-export PATH
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
 
-# 補完機能の強化.
-autoload -U compinit
-compinit
-setopt auto_param_slash     # ディレクトリ名の補完で末尾の / を自動的に付加し、次の補完に備える.
-setopt mark_dirs            # ファイル名の展開でディレクトリにマッチした場合、末尾に / を付加.
-setopt list_types           # 補完候補一覧でファイルの種別を識別マーク表示.
-setopt auto_menu            # 補完キー連打で順に補完候補を自動で補完.
-setopt auto_param_keys      # カッコの対応などを自動的に補完.
-setopt interactive_comments # コマンドラインでも # 以降をコメントと見なす.
-setopt magic_equal_subst    # コマンドラインの引数で --prefix=/usr などの = 以降も補完.
-setopt complete_in_word     # 語の途中でもカーソル位置で補完.
-setopt always_last_prompt   # カーソル位置は保持したままファイル名一覧を順次その場で表示.
-setopt extended_glob        # ファイル名で #, ~, ^ の 3 文字を正規表現として扱う.
-setopt globdots             # 明確なドットの指定なしで.から始まるファイルをマッチ.
-setopt brace_ccl            # {a-c} を a b c に展開する機能を使えるようにする.
-setopt list_packed          # 補完候補を詰めて表示.
-setopt auto_list            # 曖昧補完ですぐに補完候補を表示.
+# Uncomment the following line to disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE="true"
 
-bindkey "^I" menu-complete                                          # 展開する前に補完候補を出させる(Ctrl-iで補完するようにする)
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'                 # 補完時に大文字小文字を区別しない.
-zstyle ':completion:*:default' menu select=1                        # 補完候補のカーソル選択を有効に.
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z} r:|[._-]=*'      # 補完候補がなければより曖昧に候補を探す.
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
 
-# 補完候補を色付け. (要 brew install coreutils)
-export LS_COLORS='di=36:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
-zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
 
-# その他.
-setopt print_eight_bit      # 日本語ファイル名等8ビットを通す.
-setopt auto_resume          # サスペンド中のプロセスと同じコマンド名を実行した場合はリジューム.
-setopt equals               # =command を command のパス名に展開する.
-setopt numeric_glob_sort    # ファイル名の展開で辞書順ではなく数値的にソート.
-setopt auto_cd              # ディレクトリ名だけで cd.
-setopt correct              # スペルチェック.
-setopt NO_flow_control      # Ctrl+S/Ctrl+Q によるフロー制御を使わないようにする.
-setopt hist_no_store        # history (fc -l) コマンドをヒストリリストから取り除く.
-setopt noautoremoveslash    # 最後のスラッシュを自動的に削除しない.
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
 
-# Git コマンドの補完 (要 brew install zsh-completions)
-fpath=(/usr/local/share/zsh-completions $fpath)
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
 
-# プロンプト改変. (Git のブランチ情報も出力)
-autoload -Uz vcs_info
-precmd () {
-    psvar=()
-    LANG=en_US.UTF-8 vcs_info
-    [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
-}
-autoload colors
-colors
-local p1="%F{green}[%~]%f %F{cyan}%n@%m%f"
-local p2="%1(v|%F{red}%1v%f|)"
-PROMPT=$p1$p2$'\n'"%% "
+# Uncomment the following line to display red dots whilst waiting for completion.
+# COMPLETION_WAITING_DOTS="true"
 
-# エイリアス.
-alias s="source ~/.zshrc"
-alias ls="gls --color=auto"
-alias la="ls -a"
-alias ll="ls -l"
-alias lla="ll -a"
-alias j="jobs"
-alias vi="vim"
-alias em="emacs"
-alias more="less"
-alias ip="ifconfig"
-alias cp="cp -p"
-alias mkdir="mkdir -p"
-alias x="exit"
-alias ht="cd ~/workspace/htdocs"
-alias dt="cd ~/Dropbox/Sync/dotfiles"
-alias console="php app/console"
-alias g="git"
-alias mysql="mysql --auto-rehash"
-alias pst="pstorm"
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
+
+# User configuration
+
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# ssh
+# export SSH_KEY_PATH="~/.ssh/dsa_id"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+source ~/.zsh/*.zsh
