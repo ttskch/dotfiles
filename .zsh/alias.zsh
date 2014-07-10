@@ -1,5 +1,5 @@
 alias s="source ~/.zshrc"
-alias ls="gls --color=auto"     # required `brew install coreutils`
+alias ls="gls --color=auto"     # require `brew install coreutils`
 alias la="ls -a"
 alias ll="ls -l"
 alias lla="ll -a"
@@ -17,4 +17,4 @@ alias g="git"
 alias mysql="mysql --auto-rehash"
 alias pst="pstorm"
 alias mv="mv -i"
-alias rm="gmv -f -b -t ~/.Trash"    # required `brew install coreutils`
+alias rm="gmv -f -b -t ~/.Trash"    # require `brew install coreutils`
