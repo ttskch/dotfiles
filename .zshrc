@@ -79,4 +79,5 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-source ~/.zsh/*.zsh
+source ~/.zsh/env.zsh
+source ~/.zsh/alias.zsh
