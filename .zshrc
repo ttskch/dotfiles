@@ -79,5 +79,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+setopt NO_NOMATCH  # to avoid "zsh: no matches found: head^"
+
 source ~/.zsh/env.zsh
 source ~/.zsh/alias.zsh
