@@ -7,7 +7,7 @@ export C_INCLUDE_PATH="/usr/include/"
 
 export GEM_HOME=$HOME/.gem
 
-PATH=/usr/local/bin:/usr/bin:$PATH
+PATH=/usr/local/bin:/usr/bin:/usr/local/sbin:$PATH
 PATH=/usr/local/Cellar/httpd/2.2.27/sbin:$PATH   # for apache from brew.
 PATH=/usr/local/share/npm/bin:$PATH   # for npm apps.
 PATH=$HOME/.gem/bin:$PATH   # for gems.
