@@ -1,6 +1,6 @@
 [user]
 	name = Takashi Kanemoto
-	email = t-kanemoto@quartet-mail.com
+	email = kanemoto.takashi@gmail.com
 [core]
 	excludesfile = ~/.gitignore_global
 	precomposeunicode = true
@@ -33,3 +33,5 @@
 	tool = opendiff
 [push]
 	default = upstream
+[include]
+	path = .gitconfig.local

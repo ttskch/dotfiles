@@ -3,3 +3,4 @@
 .DS_Store
 .filezilla
 .ssh/*
+.gitconfig.local
