@@ -16,7 +16,6 @@
 	co = checkout
 	cb = checkout -b
 	cm = checkout master
-	cd = checkout develop
 	br = branch
 	log = log --decorate
 	ll = log --decorate --oneline
