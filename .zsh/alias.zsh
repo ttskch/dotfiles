@@ -18,5 +18,5 @@ alias mysql="mysql --auto-rehash"
 alias pst="pstorm"
 alias mv="mv -i"
 alias rm="gmv -f -b -t ~/.Trash"    # require `brew install coreutils`
-alias api="php bootstrap/contexts/api.php"
-alias web="php bootstrap/contexts/dev.php"
+alias api="php bootstrap/api.php"
+alias web="php bootstrap/web.php"
