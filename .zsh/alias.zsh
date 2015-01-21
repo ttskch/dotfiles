@@ -20,3 +20,4 @@ alias mv="mv -i"
 alias rm="gmv -f -b -t ~/.Trash"    # require `brew install coreutils`
 alias api="php bootstrap/api.php"
 alias web="php bootstrap/web.php"
+alias chrome="open -a \"Google Chrome\""
