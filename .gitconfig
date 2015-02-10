@@ -35,3 +35,6 @@
 	default = upstream
 [include]
 	path = .gitconfig.local
+[pr-release "branch"]
+	staging = master
+	production = release
