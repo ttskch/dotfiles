@@ -25,3 +25,4 @@ alias api="php bootstrap/api.php"
 alias web="php bootstrap/web.php"
 alias chm="open -a \"Google Chrome\""
 alias diff="colordiff -u"   # require `brew install colordiff`
+alias hubb="hub browse"
