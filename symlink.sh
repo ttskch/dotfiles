@@ -12,4 +12,5 @@ ln -sf $(cd $(dirname $0);pwd)/bin/tmux-session /usr/local/bin
 ln -sf $(cd $(dirname $0);pwd)/.gitignore_global ~
 ln -sf $(cd $(dirname $0);pwd)/git-subcommands/git-mergeto /usr/local/bin
 ln -sf $(cd $(dirname $0);pwd)/git-subcommands/git-wip /usr/local/bin
+ln -sf $(cd $(dirname $0);pwd)/git-subcommands/git-delete-merged-branches /usr/local/bin
 ln -sf $(cd $(dirname $0);pwd)/.ssh/config ~/.ssh/config

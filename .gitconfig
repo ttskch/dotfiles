@@ -29,6 +29,7 @@
 	ps = push
 	rmd = !git rm $(git ls-files --deleted)
 	adw = !git diff -w --no-color | git apply --cached
+	brd = delete-merged-branches
 [merge]
 	tool = opendiff
 [push]
