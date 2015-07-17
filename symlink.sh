@@ -6,7 +6,7 @@ basepath=$(cd $(dirname $0);pwd)
 files=.*
 for file in $files
 do
-    if [ $file != "." -a $file != ".." ] ; then
+    if [ $file != "." -a $file != ".." -a $file != ".git" ] ; then
         ln -sf $basepath/$file ~
     fi
 done
