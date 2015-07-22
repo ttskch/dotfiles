@@ -14,7 +14,7 @@
 	st = status
 	ci = commit -m
 	ciam = commit --amend
-	cie = commit -m "[ci skip] wip" --allow-empty
+	cie = commit -m \"[ci skip] wip\" --allow-empty
 	co = checkout
 	cb = checkout -b
 	cm = checkout master
