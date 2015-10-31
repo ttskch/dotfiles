@@ -24,3 +24,4 @@ alias chm="open -a \"Google Chrome\""
 alias diff="colordiff -u"   # require `brew install colordiff`
 alias hubb="hub browse"
 alias hubpr="hub pull-request"
+alias atom="open -a Atom"
