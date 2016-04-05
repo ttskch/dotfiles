@@ -32,6 +32,7 @@
 	adw = !git diff -w --no-color | git apply --cached
 	brd = delete-merged-branches
 	pr = !hub browse -- compare/$(git symbolic-ref --short HEAD)'?'expand=1'&'title=wip'&'body=$(curl -s https://raw.githubusercontent.com/quartetcom/pull-request-template/master/pr-template.md | nkf -WMQ | tr '\n' ' ' | sed 's/= //g' | sed 's/ /%0D%0A/g' | tr = %)
+	pf = push --force-with-lease
 [merge]
 	tool = opendiff
 [push]
