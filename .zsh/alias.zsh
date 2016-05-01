@@ -27,4 +27,4 @@ alias hubpr="hub pull-request"
 alias atom="open -a Atom"
 alias docker-cleani="docker images | grep '^<none>' | awk '{print $3}' | xargs docker rmi -f"
 alias docker-clean="docker ps -f status=exited -q | xargs docker rm"
-
+alias ydl="youtube-dl -x --audio-format=mp3"
