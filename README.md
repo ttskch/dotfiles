@@ -5,7 +5,7 @@
 ```bash
 # clone me
 $ cd ~
-$ git clone git@github.com:qckanemoto/dotfiles.git
+$ git clone git@github.com:ttskch/dotfiles.git
 $ cd dotfiles
 
 # if you need some local settings do below
