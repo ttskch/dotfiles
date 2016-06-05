@@ -30,3 +30,4 @@ alias docker-clean="docker ps -f status=exited -q | xargs docker rm"
 alias ydl="youtube-dl -x --audio-format=mp3"
 alias it="cd ~/Music/iTunes/iTunes\ Media/Automatically\ Add\ to\ iTunes.localized"
 alias brew-cask-cleanup='for c in /opt/homebrew-cask/Caskroom/*; do vl=(`ls -t $c`) && for v in "${vl[@]:1}"; do grm -rf "$c/$v"; done; done'
+alias ql='qlmanage -p "$@" >& /dev/null'
