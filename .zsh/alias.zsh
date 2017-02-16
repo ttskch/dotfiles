@@ -21,6 +21,7 @@ alias mv="mv -i"
 alias rm="gmv -f -b -t ~/.Trash"    # require `brew install coreutils`
 alias api="php bootstrap/api.php"
 alias web="php bootstrap/web.php"
+alias ql="qlmanage -p"
 alias chm="open -a \"Google Chrome\""
 alias diff="vimdiff"
 alias hubb="hub browse"
