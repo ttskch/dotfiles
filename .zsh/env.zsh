@@ -8,7 +8,7 @@ export C_INCLUDE_PATH="/usr/include/"
 export GEM_HOME=$HOME/.gem
 
 PATH=/usr/local/bin:/usr/bin:/usr/local/sbin:$PATH
-PATH=/usr/local/opt/httpd22/bin:$PATH   # for apache from brew.
+PATH=/usr/local/opt/httpd24/bin:$PATH   # for apache from brew.
 PATH=/usr/local/share/npm/bin:$PATH   # for npm apps.
 PATH=$HOME/.gem/bin:$PATH   # for gems.
 PATH=/usr/local/heroku/bin:$PATH   # for heroku-toolbelt
