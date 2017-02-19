@@ -28,6 +28,6 @@ alias hubb="hub browse"
 alias hubpr="hub pull-request"
 alias ydl="youtube-dl -x --audio-format=mp3"
 alias it="cd ~/Music/iTunes/iTunes\ Media/Automatically\ Add\ to\ iTunes.localized"
-alias brew-cask-cleanup='for c in /opt/homebrew-cask/Caskroom/*; do vl=(`ls -t $c`) && for v in "${vl[@]:1}"; do grm -rf "$c/$v"; done; done'
+alias brew-cask-cleanup='for c in /usr/local/Caskroom/*; do vl=(`ls -t $c`) && for v in "${vl[@]:1}"; do grm -rf "$c/$v"; done; done'
 alias ql='qlmanage -p "$@" >& /dev/null'
 alias docker-ps='docker ps | peco | cut -d " " -f 1'
