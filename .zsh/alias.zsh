@@ -16,7 +16,7 @@ alias ht="cd ~/htdocs"
 alias ws="cd ~/Dropbox/workspace"
 alias g="git"
 alias mysql="mysql --pager='less -S -n -i -F -X' --auto-rehash"
-alias pst="pstorm"
+alias pst="phpstorm"
 alias mv="mv -i"
 alias rm="gmv -f -b -t ~/.Trash"    # require `brew install coreutils`
 alias api="php bootstrap/api.php"
