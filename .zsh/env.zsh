@@ -10,7 +10,7 @@ export GEM_HOME=$HOME/.gem
 PATH=/usr/local/bin:/usr/bin:/usr/local/sbin:$PATH
 PATH=/usr/local/opt/httpd24/bin:$PATH   # for apache from brew.
 PATH=/usr/local/share/npm/bin:$PATH   # for npm apps.
-PATH=$HOME/.gem/bin:$PATH   # for gems.
+PATH=$HOME/.gem/ruby/2.4.0/bin:$PATH   # for gems.
 export PATH
 
 export LS_COLORS='di=36:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
