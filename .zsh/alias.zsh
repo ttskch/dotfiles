@@ -19,7 +19,7 @@ alias hubpr="hub pull-request"
 alias mv="mv -i"
 alias rm="gmv -f -b -t ~/.Trash"    # require `brew install coreutils`
 alias mysql="mysql --pager='less -S -n -i -F -X' --auto-rehash"
-alias pst="phpstorm"
+alias pst="pstorm"
 alias ql="qlmanage -p"
 alias chm="open -a \"Google Chrome\""
 alias atom="open -a Atom"
