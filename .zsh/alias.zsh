@@ -22,7 +22,7 @@ alias mysql="mysql --pager='less -S -n -i -F -X' --auto-rehash"
 alias pst="pstorm"
 alias ql="qlmanage -p"
 alias chm="open -a \"Google Chrome\""
-alias atom="open -a Atom"
+alias atom="open -a /Applications/Atom.app/Contents/MacOS/Atom"
 alias diff="git diff"
 alias ydl="youtube-dl -x --audio-format=mp3"
 alias it='(){ mv $1 ~/Music/iTunes/iTunes\ Media/Automatically\ Add\ to\ iTunes.localized/ }'
