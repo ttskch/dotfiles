@@ -34,3 +34,4 @@ alias tree="tree -N"
 alias date-to-time='(){ date -j -f "%Y-%m-%d %H:%M:%S" "$1" +%s }'
 alias time-to-date='(){ date -r $1 +"%Y-%m-%d %H:%M:%S" }'
 alias hl='(){ pbpaste | highlight -O rtf -S $1 -s 'molokai' -k 'Ricty' -K 24 | pbcopy }'
+alias psy="psysh"
