@@ -9,6 +9,7 @@ export GEM_HOME=$HOME/.gem
 
 PATH=/usr/local/bin:/usr/bin:/usr/local/sbin:$PATH
 PATH=/usr/local/opt/httpd24/bin:$PATH   # for apache from brew.
+PATH=/usr/local/opt/node@6/bin:$PATH   # for node from brew.
 PATH=/usr/local/share/npm/bin:$PATH   # for npm apps.
 PATH=$HOME/.gem/ruby/2.4.0/bin:$PATH   # for gems.
 PATH=$HOME/.gem/bin:$PATH   # for gems.
