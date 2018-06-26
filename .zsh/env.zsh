@@ -8,6 +8,7 @@ export C_INCLUDE_PATH="/usr/include/"
 export GEM_HOME=$HOME/.gem
 
 PATH=/usr/local/bin:/usr/bin:/usr/local/sbin:$PATH
+PATH=/usr/local/opt/php@7.1/bin:$PATH   # for php from brew.
 PATH=/usr/local/opt/httpd24/bin:$PATH   # for apache from brew.
 PATH=/usr/local/opt/node@6/bin:$PATH   # for node from brew.
 PATH=/usr/local/share/npm/bin:$PATH   # for npm apps.
