@@ -18,6 +18,7 @@ alias hubb="hub browse"
 alias hubpr="hub pull-request"
 alias mv="mv -i"
 alias rm="gmv -f -b -t ~/.Trash"    # require `brew install coreutils`
+alias grm="/usr/local/bin/grm"    # require `brew install coreutils`
 alias mysql="mysql --pager='less -S -n -i -F -X' --auto-rehash"
 alias pst="pstorm"
 alias ql="qlmanage -p"
