@@ -1,6 +1,6 @@
 [user]
 	name = Takashi Kanemoto
-	email = kanemoto.takashi@gmail.com
+	email = ttskch@gmail.com
 [core]
 	excludesfile = ~/.gitignore_global
 	precomposeunicode = true
