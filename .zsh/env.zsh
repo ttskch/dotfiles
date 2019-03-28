@@ -11,7 +11,7 @@ PATH=/usr/local/bin:/usr/bin:/usr/local/sbin:$PATH
 PATH=/usr/local/opt/httpd24/bin:$PATH   # for apache from brew
 PATH=/usr/local/opt/node/bin:$PATH   # for node from brew
 PATH=/usr/local/share/npm/bin:$PATH   # for npm apps
-PATH=$HOME/.gem/ruby/2.4.0/bin:$PATH   # for gems
+PATH=/usr/local/opt/ruby/bin:$PATH   # for ruby from brew
 PATH=$HOME/.gem/bin:$PATH   # for gems
 PATH=$HOME/.phpenv/bin:$PATH   # for phpenv
 export PATH
