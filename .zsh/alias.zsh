@@ -30,7 +30,6 @@ alias ydlv="youtube-dl --format=mp4"
 alias it='(){ mv $1 ~/Music/iTunes/iTunes\ Media/Automatically\ Add\ to\ iTunes.localized/ }'
 alias brew-cask-cleanup='for c in /usr/local/Caskroom/*; do vl=(`ls -t $c`) && for v in "${vl[@]:1}"; do grm -rf "$c/$v"; done; done'
 alias ql='qlmanage -p "$@" >& /dev/null'
-alias phpv="switch-php-version"
 alias tree="tree -N"
 alias date-to-time='(){ date -j -f "%Y-%m-%d %H:%M:%S" "$1" +%s }'
 alias time-to-date='(){ date -r $1 +"%Y-%m-%d %H:%M:%S" }'
