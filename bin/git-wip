@@ -1,9 +1,0 @@
-#!/bin/sh
-
-if [ $# -eq 0 ]; then
-    MSG='"wip"'
-else
-    MSG=$1
-fi
-git add -u .
-git commit -m $MSG
