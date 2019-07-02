@@ -14,6 +14,7 @@ PATH=/usr/local/share/npm/bin:$PATH   # for npm apps
 PATH=/usr/local/opt/ruby/bin:$PATH   # for ruby from brew
 PATH=$HOME/.gem/bin:$PATH   # for gems
 PATH=$HOME/.phpenv/bin:$PATH   # for phpenv
+PATH=/usr/local/opt/bison/bin:$PATH   # for phpenv
 export PATH
 
 eval "$(phpenv init -)"   # for phpenv
