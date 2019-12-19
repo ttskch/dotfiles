@@ -9,7 +9,6 @@ export GEM_HOME=$HOME/.gem
 
 PATH=/usr/local/bin:/usr/bin:/usr/local/sbin:$PATH
 PATH=/usr/local/opt/httpd24/bin:$PATH   # for apache from brew
-PATH=/usr/local/opt/node/bin:$PATH   # for node from brew
 PATH=/usr/local/opt/ruby/bin:$PATH   # for ruby from brew
 PATH=$HOME/.gem/bin:$PATH   # for gems
 PATH=$HOME/.phpenv/bin:$PATH   # for phpenv
