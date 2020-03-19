@@ -9,7 +9,7 @@ export GEM_HOME=$HOME/.gem
 
 PATH=/usr/local/bin:/usr/bin:/usr/local/sbin:$PATH
 PATH=/usr/local/opt/httpd24/bin:$PATH   # for apache from brew
-PATH=/usr/local/opt/ruby/bin:$PATH   # for ruby from brew
+PATH=$HOME/.rbenv/bin:$PATH   # for ruby from rbenv
 PATH=$HOME/.gem/bin:$PATH   # for gems
 PATH=$HOME/.phpenv/bin:$PATH   # for phpenv
 PATH=/usr/local/opt/bison/bin:$PATH   # for phpenv
@@ -17,6 +17,7 @@ PATH=$HOME/.nodebrew/current/bin:$PATH   # for nodebrew
 export PATH
 
 eval "$(phpenv init -)"   # for phpenv
+eval "$(rbenv init -)"   # for rbenv
 
 export PKG_CONFIG_PATH=/usr/local/opt/krb5/lib/pkgconfig:/usr/local/opt/openssl/lib/pkgconfig:/usr/local/opt/icu4c/lib/pkgconfig:/usr/local/opt/libedit/lib/pkgconfig:/usr/local/opt/libxml2/lib/pkgconfig   # for phpenv
 
