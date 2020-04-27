@@ -37,5 +37,4 @@ alias hl='(){ pbpaste | highlight -O rtf -S $1 -s 'molokai' -k 'Ricty' -K 24 | p
 alias psy="psysh"
 alias sed="gsed"
 alias typora="open -a Typora"
-alias nr="npm run"
 alias phpenv-install='PHP_BUILD_CONFIGURE_OPTS="--with-libedit=$(brew --prefix libedit)" phpenv install'
