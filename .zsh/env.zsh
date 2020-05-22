@@ -14,6 +14,7 @@ PATH=$HOME/.gem/bin:$PATH   # for gems
 PATH=$HOME/.phpenv/bin:$PATH   # for phpenv
 PATH=/usr/local/opt/bison/bin:$PATH   # for phpenv
 PATH=$HOME/.nodebrew/current/bin:$PATH   # for nodebrew
+PATH=$HOME/ghq/github.com/flutter/flutter/bin:$PATH   # for flutter
 export PATH
 
 eval "$(phpenv init -)"   # for phpenv
