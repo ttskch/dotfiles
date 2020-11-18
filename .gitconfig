@@ -31,7 +31,7 @@
 	rmd = !git rm $(git ls-files --deleted)
 	adw = !git diff -w --no-color | git apply --cached
 	brd = delete-merged-branches
-	pr = !hub browse -- compare/$(git symbolic-ref --short HEAD)'?'expand=1
+	prb = !hub browse -- compare/$(git symbolic-ref --short HEAD)'?'expand=1
 	pf = push --force-with-lease
 	cl = clean -df
 [merge]
