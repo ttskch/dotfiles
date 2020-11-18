@@ -83,3 +83,9 @@ zinit creinstall %HOME/my_completions
 # coreutils package from Homebrew; you can also use https://github.com/ogham/exa)
 zinit ice atclone"dircolors -b LS_COLORS > c.zsh" atpull'%atclone' pick"c.zsh" nocompile'!'
 zinit light trapd00r/LS_COLORS
+
+# some additional plugins
+zinit snippet OMZP::git
+zinit snippet OMZP::composer
+zinit light TheGrowingPlant/symfony.plugin.zsh
+zinit light supercrabtree/k
