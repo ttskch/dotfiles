@@ -89,3 +89,10 @@ zinit snippet OMZP::git
 zinit snippet OMZP::composer
 zinit light TheGrowingPlant/symfony.plugin.zsh
 zinit light supercrabtree/k
+
+# theming
+zinit snippet OMZL::git.zsh # zinit theming system depends on this
+zinit snippet OMZL::theme-and-appearance.zsh # some themes depends on this
+zinit snippet OMZL::spectrum.zsh # some themes depends on this
+# https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+zinit snippet OMZT::robbyrussell
