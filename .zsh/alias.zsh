@@ -38,3 +38,4 @@ alias psy="psysh"
 alias sed="gsed"
 alias typora="open -a Typora"
 alias phpenv-install='PHP_BUILD_CONFIGURE_OPTS="--with-libedit=$(brew --prefix libedit)" phpenv install'
+alias sft="bin/phpunit"
