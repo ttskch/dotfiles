@@ -1,4 +1,8 @@
-setopt NO_NOMATCH  # to avoid "zsh: no matches found: head^"
+# to avoid "zsh: no matches found: head^"
+setopt NO_NOMATCH
+
+# make case-insensitive
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 source ~/.zsh/env.zsh
 source ~/.zsh/alias.zsh
