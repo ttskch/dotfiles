@@ -1,13 +1,3 @@
-# to avoid "zsh: no matches found: head^"
-setopt NO_NOMATCH
-
-# make case-insensitive
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-
-source ~/.zsh/env.zsh
-source ~/.zsh/alias.zsh
-source ~/.zsh/secret.zsh
-
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
     print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
@@ -88,6 +78,10 @@ zinit creinstall %HOME/my_completions
 zinit ice atclone"dircolors -b LS_COLORS > c.zsh" atpull'%atclone' pick"c.zsh" nocompile'!'
 zinit light trapd00r/LS_COLORS
 
+#
+# added
+#
+
 # some additional plugins
 zinit snippet OMZP::git
 zinit snippet OMZP::composer
@@ -100,3 +94,14 @@ zinit snippet OMZL::theme-and-appearance.zsh # some themes depends on this
 zinit snippet OMZL::spectrum.zsh # some themes depends on this
 # https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 zinit snippet OMZT::robbyrussell
+
+# to avoid "zsh: no matches found: head^"
+setopt NO_NOMATCH
+
+# make case-insensitive
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
+# read additional config
+source ~/.zsh/env.zsh
+source ~/.zsh/alias.zsh
+source ~/.zsh/secret.zsh
