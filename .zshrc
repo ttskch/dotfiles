@@ -21,6 +21,10 @@ zinit light-mode for \
 
 ### End of Zinit's installer chunk
 
+#
+# @see https://github.com/zdharma/zinit#example-usage
+#
+
 # Two regular plugins loaded without investigating.
 zinit light zsh-users/zsh-autosuggestions
 zinit light zdharma/fast-syntax-highlighting
