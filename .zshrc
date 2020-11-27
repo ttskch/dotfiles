@@ -86,6 +86,9 @@ zinit light trapd00r/LS_COLORS
 # added
 #
 
+# show colorful
+zinit light chrissicool/zsh-256color
+
 # some additional plugins
 zinit snippet OMZP::git
 zinit snippet OMZP::composer
