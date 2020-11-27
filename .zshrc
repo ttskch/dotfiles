@@ -71,7 +71,7 @@ zinit light tj/git-extras
 
 # Handle completions without loading any plugin, see "clist" command.
 # This one is to be ran just once, in interactive session.
-zinit creinstall %HOME/my_completions
+# zinit creinstall %HOME/my_completions
 
 # For GNU ls (the binaries can be gls, gdircolors, e.g. on OS X when installing the
 # coreutils package from Homebrew; you can also use https://github.com/ogham/exa)
