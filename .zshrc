@@ -101,6 +101,11 @@ setopt NO_NOMATCH
 # make case-insensitive
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
+# enable to select completions by cursor
+autoload -U compinit
+compinit
+zstyle ':completion:*:default' menu select=1
+
 # read additional config
 source ~/.zsh/env.zsh
 source ~/.zsh/alias.zsh
