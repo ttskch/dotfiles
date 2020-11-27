@@ -24,7 +24,7 @@ alias pst="pstorm"
 alias ql="qlmanage -p"
 alias chm="open -a \"Google Chrome\""
 alias atom="open -a /Applications/Atom.app/Contents/MacOS/Atom"
-alias diff="git diff"
+alias diff="colordiff"
 alias ydla="youtube-dl -x --audio-format=mp3"
 alias ydlv="youtube-dl --format=mp4"
 alias it='(){ mv $1 ~/Music/iTunes/iTunes\ Media/Automatically\ Add\ to\ iTunes.localized/ }'
