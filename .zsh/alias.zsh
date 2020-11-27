@@ -1,5 +1,5 @@
 alias s="source ~/.zshrc"
-alias ls="gls --color=auto"     # require `brew install coreutils`
+alias ls="gls --color=auto" # require `brew install coreutils`
 alias ll="ls -l"
 alias la="ls -a"
 alias lla="ll -a"
@@ -11,14 +11,14 @@ alias cp="cp -p"
 alias mkdir="mkdir -p"
 alias find="find -E"
 alias x="exit"
-alias gi='(){ cd $(ghq root)/$(ghq list | peco --query "$*") }'    # require `brew install ghq peco`
-alias gh='(){ hub browse $(ghq list | peco --query "$*" | cut -d "/" -f2,3) }'    # require `brew install ghq peco`
+alias gi='(){ cd $(ghq root)/$(ghq list | peco --query "$*") }' # require `brew install ghq peco`
+alias gh='(){ hub browse $(ghq list | peco --query "$*" | cut -d "/" -f2,3) }' # require `brew install ghq peco`
 alias gg='(){ ghq get -u -p $1 && $(ghq root)/github.com/$_ }'
 alias hubb="hub browse"
 alias hubpr="hub pull-request"
 alias mv="mv -i"
-alias rm="gmv -f -b -t ~/.Trash"    # require `brew install coreutils`
-alias grm="/usr/local/bin/grm"    # require `brew install coreutils`
+alias rm="mv2trash"
+alias grm="/usr/local/bin/grm" # overwite "git rm" alias from git.plugin.zsh, require `brew install coreutils`
 alias mysql="mysql --pager='less -S -n -i -F -X' --auto-rehash"
 alias pst="pstorm"
 alias ql="qlmanage -p"
