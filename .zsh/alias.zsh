@@ -37,5 +37,5 @@ alias hl='(){ pbpaste | highlight -O rtf -S $1 -s 'molokai' -k 'Ricty' -K 24 | p
 alias psy="psysh"
 alias sed="gsed"
 alias typora="open -a Typora"
-alias phpenv-install='PHP_BUILD_CONFIGURE_OPTS="--with-libedit=$(brew --prefix libedit)" phpenv install'
+alias phpenv-install='PHP_BUILD_EXTRA_MAKE_ARGUMENTS=-j4 PHP_BUILD_CONFIGURE_OPTS="--with-zlib-dir=/usr/local/opt/zlib --with-bz2=/usr/local/opt/bzip2 --with-jpeg-dir=/usr/local/opt/libjpeg --with-png-dir=/usr/local/opt/libpng --with-curl=/usr/local/opt/curl --with-iconv=/usr/local/opt/libiconv --with-libedit=/usr/local/opt/libedit" phpenv install'
 alias sft="bin/phpunit"
