@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -eu
 
 git checkout -b $1
 git commit -m "[ci skip] wip" --allow-empty

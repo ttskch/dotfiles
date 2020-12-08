@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -eu
 
 BRANCH=`git symbolic-ref HEAD 2>/dev/null | cut -d/ -f3`
 if [ $# -eq 0 ]; then
