@@ -11,9 +11,10 @@ do
     fi
 done
 
-# symlink binaries into /usr/local/bin
+# symlink binaries into ~/bin
+mkdir -p ~/bin
 files=bin/*
 for file in $files
 do
-    ln -sf $basepath/$file /usr/local/bin
+    ln -sf $basepath/$file ~/bin
 done
