@@ -1,0 +1,26 @@
+#!/bin/sh -eu
+
+if [ $# -eq 0 ]; then
+    echo "Usage: phpenv-install-lower <version> [extensions]"
+    exit 1
+else
+    VERSION=$1
+fi
+
+EXTENSIONS=${2:-apcu=@ imagick=@}
+
+sudo xcode-select --switch /Applications/Xcode.11.7.app
+export SDKROOT=macosx
+
+export PHP_BUILD_INSTALL_EXTENSION="$EXTENSIONS"
+export PHP_BUILD_EXTRA_MAKE_ARGUMENTS=-j4
+export PHP_BUILD_CONFIGURE_OPTS="--with-zlib-dir=/usr/local/opt/zlib --with-bz2=/usr/local/opt/bzip2 --with-jpeg-dir=/usr/local/opt/libjpeg --with-png-dir=/usr/local/opt/libpng --with-curl=/usr/local/opt/curl --with-iconv=/usr/local/opt/libiconv --with-libedit=/usr/local/opt/libedit"
+phpenv install $VERSION
+
+sudo xcode-select --switch /Library/Developer/CommandLineTools/
+
+gsed -i -E "s/^;?(max_execution_time) *=.*$/\1 = 0/g" ~/.phpenv/versions/$VERSION/etc/php.ini
+gsed -i -E "s/^;?(max_input_time) *=.*$/\1 = -1/g" ~/.phpenv/versions/$VERSION/etc/php.ini
+gsed -i -E "s/^;?(memory_limit) *=.*$/\1 = 512M/g" ~/.phpenv/versions/$VERSION/etc/php.ini
+gsed -i -E "s/^;?(date.timezone) *=.*$/\1 = Asia\/Tokyo/g" ~/.phpenv/versions/$VERSION/etc/php.ini
+gsed -i -E "s/^;?(mbstring.internal_encoding) *=.*$/\1 = UTF-8/g" ~/.phpenv/versions/$VERSION/etc/php.ini
