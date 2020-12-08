@@ -1,4 +1,4 @@
-#!/bin/sh -eu
+#!/bin/sh
 
 if [ $# -eq 0 ]; then
     echo "Usage: phpenv-install <version> [extensions]"
@@ -9,10 +9,28 @@ fi
 
 EXTENSIONS=${2:-apcu=@ imagick=@}
 
-export PHP_BUILD_INSTALL_EXTENSION="$EXTENSIONS"
-export PHP_BUILD_EXTRA_MAKE_ARGUMENTS=-j4
-export PHP_BUILD_CONFIGURE_OPTS="--with-zlib-dir=/usr/local/opt/zlib --with-bz2=/usr/local/opt/bzip2 --with-jpeg-dir=/usr/local/opt/libjpeg --with-png-dir=/usr/local/opt/libpng --with-curl=/usr/local/opt/curl --with-iconv=/usr/local/opt/libiconv --with-libedit=/usr/local/opt/libedit"
-phpenv install $VERSION
+# 7.0-
+if [[ $VERSION =~ ^(7\.0\..+|[0-6]\..+)$ ]] ; then
+    echo "Invalid version: only 7.1+ are available"
+    exit 1
+# 7.1, 7.2
+elif [[ $VERSION =~ ^(7\.1\..+|7\.2\..+)$ ]] ; then
+    sudo xcode-select --switch /Applications/Xcode.11.7.app
+    export SDKROOT=macosx
+
+    export PHP_BUILD_INSTALL_EXTENSION="$EXTENSIONS"
+    export PHP_BUILD_EXTRA_MAKE_ARGUMENTS=-j4
+    export PHP_BUILD_CONFIGURE_OPTS="--with-zlib-dir=/usr/local/opt/zlib --with-bz2=/usr/local/opt/bzip2 --with-jpeg-dir=/usr/local/opt/libjpeg --with-png-dir=/usr/local/opt/libpng --with-curl=/usr/local/opt/curl --with-iconv=/usr/local/opt/libiconv --with-libedit=/usr/local/opt/libedit"
+    phpenv install $VERSION
+
+    sudo xcode-select --switch /Library/Developer/CommandLineTools/
+# 7.3+
+else
+    export PHP_BUILD_INSTALL_EXTENSION="$EXTENSIONS"
+    export PHP_BUILD_EXTRA_MAKE_ARGUMENTS=-j4
+    export PHP_BUILD_CONFIGURE_OPTS="--with-zlib-dir=/usr/local/opt/zlib --with-bz2=/usr/local/opt/bzip2 --with-jpeg-dir=/usr/local/opt/libjpeg --with-png-dir=/usr/local/opt/libpng --with-curl=/usr/local/opt/curl --with-iconv=/usr/local/opt/libiconv --with-libedit=/usr/local/opt/libedit"
+    phpenv install $VERSION
+fi
 
 gsed -i -E "s/^;?(max_execution_time) *=.*$/\1 = 0/g" ~/.phpenv/versions/$VERSION/etc/php.ini
 gsed -i -E "s/^;?(max_input_time) *=.*$/\1 = -1/g" ~/.phpenv/versions/$VERSION/etc/php.ini
