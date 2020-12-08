@@ -116,7 +116,7 @@ zstyle ':completion:*:default' menu select=1
 # change select-word-style
 autoload -Uz select-word-style
 select-word-style bash
-WORDCHARS='-'
+WORDCHARS=''
 
 # read additional config
 source ~/.zsh/env.zsh
