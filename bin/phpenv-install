@@ -14,39 +14,33 @@ else
     EXTENSIONS=${2:-""}
 fi
 
-# 7.3+
-if [[ $VERSION =~ ^(7\.[34]\..+|8\..+)$ ]] ; then
-    export PATH=/usr/local/opt/bison/bin:$PATH
-    export PKG_CONFIG_PATH=/usr/local/opt/krb5/lib/pkgconfig:/usr/local/opt/openssl/lib/pkgconfig:/usr/local/opt/icu4c/lib/pkgconfig:/usr/local/opt/libedit/lib/pkgconfig:/usr/local/opt/libxml2/lib/pkgconfig
+export PATH=/usr/local/opt/bison/bin:$PATH
+export PKG_CONFIG_PATH=/usr/local/opt/krb5/lib/pkgconfig:/usr/local/opt/openssl/lib/pkgconfig:/usr/local/opt/icu4c/lib/pkgconfig:/usr/local/opt/libedit/lib/pkgconfig:/usr/local/opt/libxml2/lib/pkgconfig
+export PHP_BUILD_INSTALL_EXTENSION="$EXTENSIONS"
+export PHP_BUILD_EXTRA_MAKE_ARGUMENTS=-j4
 
-    export PHP_BUILD_INSTALL_EXTENSION="$EXTENSIONS"
-    export PHP_BUILD_EXTRA_MAKE_ARGUMENTS=-j4
+# 8.0+
+if [[ $VERSION =~ ^(8\..+)$ ]] ; then
+    export PHP_BUILD_CONFIGURE_OPTS="--with-zlib-dir=/usr/local/opt/zlib --with-bz2=/usr/local/opt/bzip2 --with-iconv=/usr/local/opt/libiconv --with-curl=/usr/local/opt/curl --with-libedit=/usr/local/opt/libedit --with-jpeg-dir=/usr/local/opt/libjpeg --with-png-dir=/usr/local/opt/libpng --with-external-gd=/usr/local/opt/gd"
+    phpenv install $VERSION
+# 7.4, 7.3
+elif [[ $VERSION =~ ^(7\.[34]\..+)$ ]] ; then
     export PHP_BUILD_CONFIGURE_OPTS="--with-zlib-dir=/usr/local/opt/zlib --with-bz2=/usr/local/opt/bzip2 --with-iconv=/usr/local/opt/libiconv --with-curl=/usr/local/opt/curl --with-libedit=/usr/local/opt/libedit --with-jpeg-dir=/usr/local/opt/libjpeg --with-png-dir=/usr/local/opt/libpng"
     phpenv install $VERSION
-# 7.1, 7.2
+# 7.2, 7.1
 elif [[ $VERSION =~ ^(7\.[12]\..+)$ ]] ; then
     sudo xcode-select --switch /Applications/Xcode.11.7.app
     export SDKROOT=macosx
 
-    export PATH=/usr/local/opt/bison/bin:$PATH
-    export PKG_CONFIG_PATH=/usr/local/opt/krb5/lib/pkgconfig:/usr/local/opt/openssl/lib/pkgconfig:/usr/local/opt/icu4c/lib/pkgconfig:/usr/local/opt/libedit/lib/pkgconfig:/usr/local/opt/libxml2/lib/pkgconfig
-
-    export PHP_BUILD_INSTALL_EXTENSION="$EXTENSIONS"
-    export PHP_BUILD_EXTRA_MAKE_ARGUMENTS=-j4
     export PHP_BUILD_CONFIGURE_OPTS="--with-zlib-dir=/usr/local/opt/zlib --with-bz2=/usr/local/opt/bzip2 --with-iconv=/usr/local/opt/libiconv --with-curl=/usr/local/opt/curl --with-libedit=/usr/local/opt/libedit --with-jpeg-dir=/usr/local/opt/libjpeg --with-png-dir=/usr/local/opt/libpng"
     phpenv install $VERSION
 
     sudo xcode-select --switch /Library/Developer/CommandLineTools/
-# 5.6, 7.0
+# 7.0, 5.6
 elif [[ $VERSION =~ ^(5\.6\..+|7\.0\..+)$ ]] ; then
     sudo xcode-select --switch /Applications/Xcode.11.7.app
     export SDKROOT=macosx
 
-    export PATH=/usr/local/opt/bison/bin:$PATH
-    export PKG_CONFIG_PATH=/usr/local/opt/krb5/lib/pkgconfig:/usr/local/opt/openssl/lib/pkgconfig:/usr/local/opt/icu4c/lib/pkgconfig:/usr/local/opt/libedit/lib/pkgconfig:/usr/local/opt/libxml2/lib/pkgconfig
-
-    export PHP_BUILD_INSTALL_EXTENSION="$EXTENSIONS"
-    export PHP_BUILD_EXTRA_MAKE_ARGUMENTS=-j4
     export PHP_BUILD_CONFIGURE_OPTS="--with-zlib-dir=/usr/local/opt/zlib --with-bz2=/usr/local/opt/bzip2 --with-iconv=/usr/local/opt/libiconv --with-curl=/usr/local/opt/curl --with-libedit=/usr/local/opt/libedit --with-jpeg-dir=/usr/local/opt/libjpeg --with-png-dir=/usr/local/opt/libpng --without-tidy"
     phpenv install $VERSION
 
