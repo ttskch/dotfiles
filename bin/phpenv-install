@@ -1,4 +1,5 @@
 #!/bin/sh
+# @see https://blog.ttskch.com/mac-phpenv-nodebrew/
 
 if [ $# -eq 0 ] ; then
     echo "Usage: phpenv-install <version> [extensions]"
@@ -10,23 +11,29 @@ fi
 if [ $# -eq 1 ] ; then
     EXTENSIONS="apcu=@ imagick=@"
 else
-    EXTENSIONS=""
+    EXTENSIONS=${2:-""}
 fi
 
 # 7.3+
-if [[ $VERSION =~ ^(7\.[^3-9]\..+|7\.[1-9][0-9]+\..+|[89]\..+|[1-9][0-9]+\..+)$ ]] ; then
-    export PHP_BUILD_INSTALL_EXTENSION="$EXTENSIONS"
-    export PHP_BUILD_EXTRA_MAKE_ARGUMENTS=-j4
-    export PHP_BUILD_CONFIGURE_OPTS="--with-zlib-dir=/usr/local/opt/zlib --with-bz2=/usr/local/opt/bzip2 --with-jpeg-dir=/usr/local/opt/libjpeg --with-png-dir=/usr/local/opt/libpng --with-curl=/usr/local/opt/curl --with-iconv=/usr/local/opt/libiconv --with-libedit=/usr/local/opt/libedit"
-    phpenv install $VERSION
-# 7.1, 7.2
-elif [[ $VERSION =~ ^(7\.1\..+|7\.2\..+)$ ]] ; then
-    sudo xcode-select --switch /Applications/Xcode.11.7.app
-    export SDKROOT=macosx
+if [[ $VERSION =~ ^(7\.[34]\..+|8\..+)$ ]] ; then
+    export PATH=/usr/local/opt/bison/bin:$PATH
+    export PKG_CONFIG_PATH=/usr/local/opt/krb5/lib/pkgconfig:/usr/local/opt/openssl/lib/pkgconfig:/usr/local/opt/icu4c/lib/pkgconfig:/usr/local/opt/libedit/lib/pkgconfig:/usr/local/opt/libxml2/lib/pkgconfig
 
     export PHP_BUILD_INSTALL_EXTENSION="$EXTENSIONS"
     export PHP_BUILD_EXTRA_MAKE_ARGUMENTS=-j4
-    export PHP_BUILD_CONFIGURE_OPTS="--with-zlib-dir=/usr/local/opt/zlib --with-bz2=/usr/local/opt/bzip2 --with-jpeg-dir=/usr/local/opt/libjpeg --with-png-dir=/usr/local/opt/libpng --with-curl=/usr/local/opt/curl --with-iconv=/usr/local/opt/libiconv --with-libedit=/usr/local/opt/libedit"
+    export PHP_BUILD_CONFIGURE_OPTS="--with-zlib-dir=/usr/local/opt/zlib --with-bz2=/usr/local/opt/bzip2 --with-iconv=/usr/local/opt/libiconv --with-curl=/usr/local/opt/curl --with-libedit=/usr/local/opt/libedit --with-jpeg-dir=/usr/local/opt/libjpeg --with-png-dir=/usr/local/opt/libpng"
+    phpenv install $VERSION
+# 7.1, 7.2
+elif [[ $VERSION =~ ^(7\.[12]\..+)$ ]] ; then
+    sudo xcode-select --switch /Applications/Xcode.11.7.app
+    export SDKROOT=macosx
+
+    export PATH=/usr/local/opt/bison/bin:$PATH
+    export PKG_CONFIG_PATH=/usr/local/opt/krb5/lib/pkgconfig:/usr/local/opt/openssl/lib/pkgconfig:/usr/local/opt/icu4c/lib/pkgconfig:/usr/local/opt/libedit/lib/pkgconfig:/usr/local/opt/libxml2/lib/pkgconfig
+
+    export PHP_BUILD_INSTALL_EXTENSION="$EXTENSIONS"
+    export PHP_BUILD_EXTRA_MAKE_ARGUMENTS=-j4
+    export PHP_BUILD_CONFIGURE_OPTS="--with-zlib-dir=/usr/local/opt/zlib --with-bz2=/usr/local/opt/bzip2 --with-iconv=/usr/local/opt/libiconv --with-curl=/usr/local/opt/curl --with-libedit=/usr/local/opt/libedit --with-jpeg-dir=/usr/local/opt/libjpeg --with-png-dir=/usr/local/opt/libpng"
     phpenv install $VERSION
 
     sudo xcode-select --switch /Library/Developer/CommandLineTools/
@@ -35,9 +42,12 @@ elif [[ $VERSION =~ ^(5\.6\..+|7\.0\..+)$ ]] ; then
     sudo xcode-select --switch /Applications/Xcode.11.7.app
     export SDKROOT=macosx
 
+    export PATH=/usr/local/opt/bison/bin:$PATH
+    export PKG_CONFIG_PATH=/usr/local/opt/krb5/lib/pkgconfig:/usr/local/opt/openssl/lib/pkgconfig:/usr/local/opt/icu4c/lib/pkgconfig:/usr/local/opt/libedit/lib/pkgconfig:/usr/local/opt/libxml2/lib/pkgconfig
+
     export PHP_BUILD_INSTALL_EXTENSION="$EXTENSIONS"
     export PHP_BUILD_EXTRA_MAKE_ARGUMENTS=-j4
-    export PHP_BUILD_CONFIGURE_OPTS="--with-zlib-dir=/usr/local/opt/zlib --with-bz2=/usr/local/opt/bzip2 --with-jpeg-dir=/usr/local/opt/libjpeg --with-png-dir=/usr/local/opt/libpng --with-curl=/usr/local/opt/curl --with-iconv=/usr/local/opt/libiconv --with-libedit=/usr/local/opt/libedit --without-tidy"
+    export PHP_BUILD_CONFIGURE_OPTS="--with-zlib-dir=/usr/local/opt/zlib --with-bz2=/usr/local/opt/bzip2 --with-iconv=/usr/local/opt/libiconv --with-curl=/usr/local/opt/curl --with-libedit=/usr/local/opt/libedit --with-jpeg-dir=/usr/local/opt/libjpeg --with-png-dir=/usr/local/opt/libpng --without-tidy"
     phpenv install $VERSION
 
     sudo xcode-select --switch /Library/Developer/CommandLineTools/
@@ -47,8 +57,11 @@ else
     exit 1
 fi
 
-gsed -i -E "s/^;?(max_execution_time) *=.*$/\1 = 0/g" ~/.phpenv/versions/$VERSION/etc/php.ini
-gsed -i -E "s/^;?(max_input_time) *=.*$/\1 = -1/g" ~/.phpenv/versions/$VERSION/etc/php.ini
-gsed -i -E "s/^;?(memory_limit) *=.*$/\1 = 512M/g" ~/.phpenv/versions/$VERSION/etc/php.ini
-gsed -i -E "s/^;?(date.timezone) *=.*$/\1 = Asia\/Tokyo/g" ~/.phpenv/versions/$VERSION/etc/php.ini
-gsed -i -E "s/^;?(mbstring.internal_encoding) *=.*$/\1 = UTF-8/g" ~/.phpenv/versions/$VERSION/etc/php.ini
+# tweak php.ini
+if [ -e ~/.phpenv/versions/$VERSION/etc/php.ini ] ; then
+    gsed -i -E "s/^;?(max_execution_time) *=.*$/\1 = 0/g" ~/.phpenv/versions/$VERSION/etc/php.ini
+    gsed -i -E "s/^;?(max_input_time) *=.*$/\1 = -1/g" ~/.phpenv/versions/$VERSION/etc/php.ini
+    gsed -i -E "s/^;?(memory_limit) *=.*$/\1 = 512M/g" ~/.phpenv/versions/$VERSION/etc/php.ini
+    gsed -i -E "s/^;?(date.timezone) *=.*$/\1 = Asia\/Tokyo/g" ~/.phpenv/versions/$VERSION/etc/php.ini
+    gsed -i -E "s/^;?(mbstring.internal_encoding) *=.*$/\1 = UTF-8/g" ~/.phpenv/versions/$VERSION/etc/php.ini
+fi
