@@ -38,3 +38,4 @@ alias psy="psysh"
 alias sed="gsed"
 alias typora="open -a Typora"
 alias sft="bin/phpunit"
+alias chrome='open -a "Google Chrome"'
