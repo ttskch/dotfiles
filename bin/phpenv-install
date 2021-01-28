@@ -1,8 +1,12 @@
 #!/bin/sh
 # @see https://blog.ttskch.com/mac-phpenv-nodebrew/
 
+# for https://symfony.com/doc/current/the-fast-track/ja/index.html
+# $ brew install postgres libsodium
+# $ phpenv-install 7.4.14 "apcu=@ imagick=@ redis=5.3.2 amqp=1.10.2" "--with-pdo-pgsql=/usr/local/opt/postgres --with-sodium=/usr/local/opt/libsodium"
+
 if [ $# -eq 0 ] ; then
-    echo "Usage: phpenv-install <version> [extensions]"
+    echo "Usage: phpenv-install <version> \"[extensions]\" \"[build_configure_options]\""
     exit 1
 else
     VERSION=$1
@@ -14,6 +18,8 @@ else
     EXTENSIONS=${2:-""}
 fi
 
+ADDITIONAL_CONFIGURE_OPTS=${3:-""}
+
 export PATH=/usr/local/opt/bison/bin:$PATH
 export PKG_CONFIG_PATH=/usr/local/opt/krb5/lib/pkgconfig:/usr/local/opt/openssl/lib/pkgconfig:/usr/local/opt/icu4c/lib/pkgconfig:/usr/local/opt/libedit/lib/pkgconfig:/usr/local/opt/libxml2/lib/pkgconfig
 export PHP_BUILD_INSTALL_EXTENSION="$EXTENSIONS"
@@ -21,18 +27,18 @@ export PHP_BUILD_EXTRA_MAKE_ARGUMENTS=-j4
 
 # 8.0+
 if [[ $VERSION =~ ^(8\..+)$ ]] ; then
-    export PHP_BUILD_CONFIGURE_OPTS="--with-zlib-dir=/usr/local/opt/zlib --with-bz2=/usr/local/opt/bzip2 --with-iconv=/usr/local/opt/libiconv --with-curl=/usr/local/opt/curl --with-libedit=/usr/local/opt/libedit --with-jpeg-dir=/usr/local/opt/libjpeg --with-png-dir=/usr/local/opt/libpng --with-external-gd=/usr/local/opt/gd"
+    export PHP_BUILD_CONFIGURE_OPTS="$ADDITIONAL_CONFIGURE_OPTS --with-zlib-dir=/usr/local/opt/zlib --with-bz2=/usr/local/opt/bzip2 --with-iconv=/usr/local/opt/libiconv --with-curl=/usr/local/opt/curl --with-libedit=/usr/local/opt/libedit --with-jpeg-dir=/usr/local/opt/libjpeg --with-png-dir=/usr/local/opt/libpng --with-external-gd=/usr/local/opt/gd"
     phpenv install $VERSION
 # 7.4, 7.3
 elif [[ $VERSION =~ ^(7\.[34]\..+)$ ]] ; then
-    export PHP_BUILD_CONFIGURE_OPTS="--with-zlib-dir=/usr/local/opt/zlib --with-bz2=/usr/local/opt/bzip2 --with-iconv=/usr/local/opt/libiconv --with-curl=/usr/local/opt/curl --with-libedit=/usr/local/opt/libedit --with-jpeg-dir=/usr/local/opt/libjpeg --with-png-dir=/usr/local/opt/libpng"
+    export PHP_BUILD_CONFIGURE_OPTS="$ADDITIONAL_CONFIGURE_OPTS --with-zlib-dir=/usr/local/opt/zlib --with-bz2=/usr/local/opt/bzip2 --with-iconv=/usr/local/opt/libiconv --with-curl=/usr/local/opt/curl --with-libedit=/usr/local/opt/libedit --with-jpeg-dir=/usr/local/opt/libjpeg --with-png-dir=/usr/local/opt/libpng"
     phpenv install $VERSION
 # 7.2, 7.1
 elif [[ $VERSION =~ ^(7\.[12]\..+)$ ]] ; then
     sudo xcode-select --switch /Applications/Xcode.11.7.app
     export SDKROOT=macosx
 
-    export PHP_BUILD_CONFIGURE_OPTS="--with-zlib-dir=/usr/local/opt/zlib --with-bz2=/usr/local/opt/bzip2 --with-iconv=/usr/local/opt/libiconv --with-curl=/usr/local/opt/curl --with-libedit=/usr/local/opt/libedit --with-jpeg-dir=/usr/local/opt/libjpeg --with-png-dir=/usr/local/opt/libpng"
+    export PHP_BUILD_CONFIGURE_OPTS="$ADDITIONAL_CONFIGURE_OPTS --with-zlib-dir=/usr/local/opt/zlib --with-bz2=/usr/local/opt/bzip2 --with-iconv=/usr/local/opt/libiconv --with-curl=/usr/local/opt/curl --with-libedit=/usr/local/opt/libedit --with-jpeg-dir=/usr/local/opt/libjpeg --with-png-dir=/usr/local/opt/libpng"
     phpenv install $VERSION
 
     sudo xcode-select --switch /Library/Developer/CommandLineTools/
@@ -41,7 +47,7 @@ elif [[ $VERSION =~ ^(5\.6\..+|7\.0\..+)$ ]] ; then
     sudo xcode-select --switch /Applications/Xcode.11.7.app
     export SDKROOT=macosx
 
-    export PHP_BUILD_CONFIGURE_OPTS="--with-zlib-dir=/usr/local/opt/zlib --with-bz2=/usr/local/opt/bzip2 --with-iconv=/usr/local/opt/libiconv --with-curl=/usr/local/opt/curl --with-libedit=/usr/local/opt/libedit --with-jpeg-dir=/usr/local/opt/libjpeg --with-png-dir=/usr/local/opt/libpng --without-tidy"
+    export PHP_BUILD_CONFIGURE_OPTS="$ADDITIONAL_CONFIGURE_OPTS --with-zlib-dir=/usr/local/opt/zlib --with-bz2=/usr/local/opt/bzip2 --with-iconv=/usr/local/opt/libiconv --with-curl=/usr/local/opt/curl --with-libedit=/usr/local/opt/libedit --with-jpeg-dir=/usr/local/opt/libjpeg --with-png-dir=/usr/local/opt/libpng --without-tidy"
     phpenv install $VERSION
 
     sudo xcode-select --switch /Library/Developer/CommandLineTools/
