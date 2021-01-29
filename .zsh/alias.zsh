@@ -36,5 +36,6 @@ alias hl='(){ pbpaste | highlight -O rtf -S $1 -s 'molokai' -k 'Ricty' -K 24 | p
 alias psy="psysh"
 alias sed="gsed"
 alias typora="open -a Typora"
+alias sf="symfony console"
 alias sft="bin/phpunit"
 alias chrome='open -a "Google Chrome"'

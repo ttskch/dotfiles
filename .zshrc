@@ -92,7 +92,6 @@ zinit light chrissicool/zsh-256color
 # some additional plugins
 zinit snippet OMZP::git
 zinit snippet OMZP::composer
-zinit light TheGrowingPlant/symfony.plugin.zsh
 zinit light supercrabtree/k
 
 # theming
