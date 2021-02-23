@@ -13,11 +13,11 @@ PATH=$HOME/.rbenv/bin:$PATH # for ruby from rbenv
 PATH=$HOME/.gem/bin:$PATH # for gems
 PATH=$HOME/.phpenv/bin:$PATH # for phpenv
 PATH=$HOME/.symfony/bin:$PATH # for symfony/cli
-PATH=$HOME/.nodebrew/current/bin:$PATH # for nodebrew
 PATH=$HOME/ghq/github.com/flutter/flutter/bin:$PATH # for flutter
 export PATH
 
 eval "$(phpenv init -)" # for phpenv
+eval "$(nodenv init -)" # for nodenv
 eval "$(rbenv init -)" # for rbenv
 
 . $(brew --prefix z)/etc/profile.d/z.sh # for z

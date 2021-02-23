@@ -121,3 +121,4 @@ WORDCHARS=''
 source ~/.zsh/env.zsh
 source ~/.zsh/alias.zsh
 source ~/.zsh/secret.zsh
+
