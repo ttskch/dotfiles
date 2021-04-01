@@ -1,0 +1,5 @@
+#!/bin/sh -eu
+
+out="${1}.bom.csv"
+printf "\xef\xbb\xbf" > $out
+cat $1 >> $out
