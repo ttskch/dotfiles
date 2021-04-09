@@ -3,5 +3,4 @@
 cd $(brew --prefix)/Homebrew/Library/Taps/homebrew/homebrew-core/Formula
 git checkout e7f0f10dc63b1dc1061d475f1a61d01b70ef2cb7
 brew reinstall ./icu4c.rb
-brew switch icu4c 63.1
 git checkout master

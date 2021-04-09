@@ -1,6 +1,6 @@
 #!/bin/sh
 
 cd $(brew --prefix)/Homebrew/Library/Taps/homebrew/homebrew-core/Formula
-git checkout 896d1018c7a4906f2c3fa1386aaf283497db60a2
+git checkout 8e4cfd6b1b
 brew reinstall ./icu4c.rb
 git checkout master
