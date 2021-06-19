@@ -11,13 +11,11 @@ PATH=/usr/local/bin:/usr/bin:/usr/local/sbin:$PATH
 PATH=$HOME/bin:$PATH
 PATH=$HOME/.rbenv/bin:$PATH # for ruby from rbenv
 PATH=$HOME/.gem/bin:$PATH # for gems
-PATH=$HOME/.phpenv/bin:$PATH # for phpenv
 PATH=$HOME/.symfony/bin:$PATH # for symfony/cli
 PATH=$HOME/ghq/github.com/flutter/flutter/bin:$PATH # for flutter
 PATH=$HOME/.composer/vendor/bin:$PATH # for composer global packages
 export PATH
 
-eval "$(phpenv init -)" # for phpenv
 eval "$(nodenv init -)" # for nodenv
 eval "$(rbenv init -)" # for rbenv
 
