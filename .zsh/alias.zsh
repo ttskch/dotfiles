@@ -37,5 +37,5 @@ alias psy="psysh"
 alias sed="gsed"
 alias typora="open -a Typora"
 alias sf="symfony console"
-alias sft="bin/phpunit"
+alias sft="bin/phpunit --stop-on-failure"
 alias chrome='open -a "Google Chrome"'
