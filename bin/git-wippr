@@ -3,4 +3,4 @@
 git checkout -b $1
 git commit -m "[ci skip] wip" --allow-empty
 git push -u origin $1
-hub pull-request -m $2 | xargs open -a "Google Chrome"
+gh pr create -d -t $2 -b "" | xargs open -a "Google Chrome"
