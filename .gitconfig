@@ -31,7 +31,7 @@
 	rmd = !git rm $(git ls-files --deleted)
 	adw = !git diff -w --no-color | git apply --cached
 	brd = delete-merged-branches
-	prb = !open -a \"Google Chrome\" https://github.com/$(gh repo view | head -1 | cut -f 2)/compare/main...$(git symbolic-ref --short HEAD)'?'expand=1
+	prm = !open -a \"Google Chrome\" https://github.com/$(gh repo view | head -1 | cut -f 2)/compare/main...$(git symbolic-ref --short HEAD)'?'expand=1
 	prr = !open -a \"Google Chrome\" https://github.com/$(gh repo view | head -1 | cut -f 2)/compare/release...$(git symbolic-ref --short HEAD)'?'expand=1
 	pf = push --force-with-lease
 	cl = clean -df
