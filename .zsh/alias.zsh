@@ -39,3 +39,4 @@ alias typora="open -a Typora"
 alias sf="symfony console"
 alias sft="symfony php bin/phpunit --stop-on-failure"
 alias chrome='open -a "Google Chrome"'
+alias zenn-slug="php -r 'echo substr(md5(uniqid()), 0, 14);'"
