@@ -1,4 +1,4 @@
-alias s="source ~/.zshrc"
+alias s="source ~/.zshrc && tmux source-file ~/.tmux.conf"
 alias ls="gls --color=auto" # require `brew install coreutils`
 alias ll="ls -l"
 alias la="ls -a"
