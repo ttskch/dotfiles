@@ -13,6 +13,7 @@ PATH=$HOME/.rbenv/bin:$PATH # for ruby from rbenv
 PATH=$HOME/.gem/bin:$PATH # for gems
 PATH=$HOME/ghq/github.com/flutter/flutter/bin:$PATH # for flutter
 PATH=$HOME/.composer/vendor/bin:$PATH # for composer global packages
+PATH=$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH # for yarn global packages
 export PATH
 
 eval "$(nodenv init -)" # for nodenv
