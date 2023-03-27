@@ -22,6 +22,7 @@ zinit light-mode for \
 ### End of Zinit's installer chunk
 
 # general
+setopt autocd
 zinit light zsh-users/zsh-autosuggestions
 zinit light zdharma/fast-syntax-highlighting
 zinit load zdharma/history-search-multi-word
