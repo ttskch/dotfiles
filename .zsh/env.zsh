@@ -16,6 +16,7 @@ PATH=$HOME/.composer/vendor/bin:$PATH # for composer global packages
 PATH=$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH # for yarn global packages
 export PATH
 
+eval "$(/opt/homebrew/bin/brew shellenv)" # for homebrew
 eval "$(nodenv init -)" # for nodenv
 eval "$(rbenv init -)" # for rbenv
 
