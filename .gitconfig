@@ -17,7 +17,6 @@
 	cie = commit -m \"[ci skip] wip\" --allow-empty
 	co = checkout
 	cb = checkout -b
-	cm = checkout master
 	br = branch
 	log = log --decorate
 	ll = log --decorate --oneline
