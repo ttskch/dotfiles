@@ -40,4 +40,4 @@ alias sed="gsed"
 alias sf="bin/console"
 alias pu="bin/phpunit --stop-on-failure"
 alias chrome='open -a "Google Chrome"'
-alias zenn-slug="php -r 'echo substr(md5(uniqid()), 0, 14);'"
+alias zenn-slug="php -r 'echo substr(md5(uniqid()), 0, 14);' | pbcopy"
