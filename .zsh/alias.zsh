@@ -5,7 +5,6 @@ alias la="ls -a"
 alias lla="ll -a"
 alias vi="vim"
 alias more="less"
-alias less=bat
 alias cat=bat
 alias ip-release="sudo ipconfig set en0 BOOTP"
 alias ip-new="sudo ipconfig set en0 DHCP"
