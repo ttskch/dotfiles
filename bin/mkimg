@@ -1,0 +1,14 @@
+#!/bin/sh -eu
+
+mb=${1}
+w=${2:-500}
+h=${3:-500}
+ext=${4:-png}
+bg=${5:-ff876f}
+fg=${6:-fff}
+text=${7:-${w}x${h} (${mb}MB)}
+
+wget --quiet "https://placehold.co/${w}x${h}/${bg}/${fg}/${ext}?text=${text}" -O ${mb}MB.${ext}
+dd if=/dev/zero of=/tmp/dummy.file bs=$(expr 1024 \* 1024)  count=${mb} > /dev/null 2>&1
+exiftool ${mb}MB.${ext} -comment\<=/tmp/dummy.file -overwrite_original > /dev/null 2>&1
+rm /tmp/dummy.file
