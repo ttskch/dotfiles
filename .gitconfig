@@ -13,7 +13,7 @@
 	ad = add .
 	st = status
 	ci = commit -m
-	ciam = commit --amend
+	ciam = commit --amend --reset-author
 	cie = commit -m \"[ci skip] wip\" --allow-empty
 	co = checkout
 	cb = checkout -b
