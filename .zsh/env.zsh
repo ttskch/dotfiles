@@ -14,7 +14,10 @@ PATH=$HOME/.gem/bin:$PATH # for gems
 PATH=$HOME/ghq/github.com/flutter/flutter/bin:$PATH # for flutter
 PATH=$HOME/.composer/vendor/bin:$PATH # for composer global packages
 PATH=$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH # for yarn global packages
+PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH" # for java
 export PATH
+
+export CPPFLAGS="-I/opt/homebrew/opt/openjdk@17/include" # for java
 
 eval "$(/opt/homebrew/bin/brew shellenv)" # for homebrew
 eval "$(nodenv init -)" # for nodenv
