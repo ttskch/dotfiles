@@ -23,6 +23,7 @@
 	mg = merge --no-ff
 	mt = mergeto
 	df = diff --stat
+	dft = difftool
 	ls = ls-files
 	re = remote
 	pl = pull
@@ -43,9 +44,16 @@
 [pr-release "branch"]
 	staging = master
 	production = release
+[diff]
+	tool = difftastic
+[difftool]
+	prompt = false
+[difftool "difftastic"]
+	cmd = difft "$LOCAL" "$REMOTE"
 [pager]
 	diff = diff-so-fancy | less --tabs=4 -RFX
 	show = diff-so-fancy | less --tabs=4 -RFX
+	difftool = true
 [diff-so-fancy]
 	first-run = false
 [pull]
