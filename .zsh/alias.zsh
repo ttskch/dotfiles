@@ -40,3 +40,4 @@ alias sf="bin/console"
 alias pu="bin/phpunit --stop-on-failure"
 alias chrome='open -a "Google Chrome"'
 alias zenn-slug="php -r 'echo substr(md5(uniqid()), 0, 14);' | pbcopy"
+alias add-bom='(){ echo -ne "\xef\xbb\xbf" | cat - $1 > $1.bom.csv }'
