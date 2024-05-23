@@ -20,7 +20,7 @@ alias mv="mv -i"
 alias rm="mv2trash"
 alias grm="/usr/local/bin/grm" # overwite "git rm" alias from git.plugin.zsh, require `brew install coreutils`
 alias mysql="mysql --pager='less -S -n -i -F -X' --auto-rehash"
-alias pst="pstorm"
+alias pst="phpstorm"
 alias chm="open -a \"Google Chrome\""
 alias atom="open -a /Applications/Atom.app/Contents/MacOS/Atom"
 alias diff="colordiff"
