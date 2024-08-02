@@ -15,6 +15,7 @@ PATH=$HOME/ghq/github.com/flutter/flutter/bin:$PATH # for flutter
 PATH=$HOME/.composer/vendor/bin:$PATH # for composer global packages
 PATH=$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH # for yarn global packages
 PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH" # for java
+PATH="/Applications/PhpStorm.app/Contents/MacOS:$PATH" # for PhpStorm Command-line Launcher
 PATH="/Applications/IntelliJ IDEA CE.app/Contents/MacOS:$PATH" # for IntelliJ IDEA Command-line Launcher
 export PATH
 
