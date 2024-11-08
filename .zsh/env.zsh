@@ -22,9 +22,12 @@ export PATH
 export CPPFLAGS="-I/opt/homebrew/opt/openjdk@17/include" # for java
 
 eval "$(/opt/homebrew/bin/brew shellenv)" # for homebrew
-eval "$(nodenv init -)" # for nodenv
 eval "$(rbenv init -)" # for rbenv
 eval "$(pyenv init -)" # for pyenv
+
+# for volta
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
 
 . $(brew --prefix z)/etc/profile.d/z.sh # for z
 
