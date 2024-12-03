@@ -1,7 +1,7 @@
 #!/bin/sh -eu
 
 if [ $# -lt 2 ]; then
-  echo "Usage: $0 <token> <secret> [<devicesId>]"
+  echo "Usage: $0 <token> <secret> [<deviceId>]"
   exit 1
 fi
 
