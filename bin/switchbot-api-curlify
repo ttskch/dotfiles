@@ -1,0 +1,27 @@
+#!/bin/sh -eu
+
+if [ $# -lt 2 ]; then
+  echo "Usage: $0 <token> <secret> [<devicesId>]"
+  exit 1
+fi
+
+token=$1
+secret=$2
+deviceId=${3:-}
+
+t=$(date +%s000)
+nonce=$(uuidgen)
+sign=$(/bin/echo -n "$token$t$nonce" | openssl dgst -sha256 -hmac $secret -binary | base64)
+
+if [ $# -eq 2 ]; then
+  cat <<EOS
+# @see https://github.com/OpenWonderLabs/SwitchBotAPI
+curl https://api.switch-bot.com/v1.1/devices -H "Content-Type: application/json" -H "Authorization: $token" -H "t: $t" -H "nonce: $nonce" -H "sign: $sign"
+EOS
+  exit 0
+fi
+
+cat <<EOS
+# @see https://github.com/OpenWonderLabs/SwitchBotAPI
+curl -X POST https://api.switch-bot.com/v1.1/devices/$deviceId/commands -H "Content-Type: application/json" -H "Authorization: $token" -H "t: $t" -H "nonce: $nonce" -H "sign: $sign" -d '{"commandType":"command","command":"turnOn","parameter":"default"}'
+EOS
