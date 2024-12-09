@@ -9,7 +9,7 @@ token=$1
 secret=$2
 deviceId=${3:-}
 
-t=$(date +%s000)
+t=$(date -v+100y +%s000)
 nonce=$(uuidgen)
 sign=$(/bin/echo -n "$token$t$nonce" | openssl dgst -sha256 -hmac $secret -binary | base64)
 
