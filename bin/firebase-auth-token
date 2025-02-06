@@ -1,0 +1,11 @@
+#!/bin/sh -eu
+
+apiKey=${1}
+email=${2}
+password=${3}
+
+curl "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${apiKey}" \
+-H "Content-Type: application/json" \
+--data-binary "{\"email\":\"${email}\",\"password\":\"${password}\",\"returnSecureToken\":true}" | jq -r .idToken
+
+# see https://qiita.com/kazakago/items/892a8c5df76a912f1d82
