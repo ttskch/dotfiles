@@ -5,7 +5,7 @@ alias la="ls -a"
 alias lla="ll -a"
 alias vi="vim"
 alias more="less"
-alias cat=bat
+alias cat="bat --theme=base16"
 alias ip-release="sudo ipconfig set en0 BOOTP"
 alias ip-new="sudo ipconfig set en0 DHCP"
 alias cp="cp -p"
