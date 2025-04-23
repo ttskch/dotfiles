@@ -20,7 +20,7 @@ alias mv="mv -i"
 alias rm="mv2trash"
 alias grm="/usr/local/bin/grm" # overwite "git rm" alias from git.plugin.zsh, require `brew install coreutils`
 alias mysql="mysql --pager='less -S -n -i -F -X' --auto-rehash"
-alias pst="phpstorm"
+alias pst="/Applications/PhpStorm.app/Contents/MacOS/phpstorm"
 alias chm="open -a \"Google Chrome\""
 alias diff="colordiff"
 alias ydla="youtube-dl -x --audio-format=mp3"
