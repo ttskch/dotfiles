@@ -1,4 +1,4 @@
-alias s="source ~/.zshrc && tmux source-file ~/.tmux.conf"
+alias s="source ~/.zshrc"
 alias ls="gls --color=auto" # require `brew install coreutils`
 alias ll="ls -l"
 alias la="ls -a"
@@ -22,7 +22,6 @@ alias grm="/usr/local/bin/grm" # overwite "git rm" alias from git.plugin.zsh, re
 alias mysql="mysql --pager='less -S -n -i -F -X' --auto-rehash"
 alias pst="phpstorm"
 alias chm="open -a \"Google Chrome\""
-alias atom="open -a /Applications/Atom.app/Contents/MacOS/Atom"
 alias diff="colordiff"
 alias ydla="youtube-dl -x --audio-format=mp3"
 alias ydlv="youtube-dl --format=mp4"
