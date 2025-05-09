@@ -1,0 +1,21 @@
+#!/bin/sh -eu
+
+secretKey=${1}
+userId=${2}
+
+sessionId=$(curl -X POST "https://api.clerk.com/v1/sessions" \
+  -H "Authorization: Bearer ${secretKey}" \
+  -H "Content-Type: application/json" \
+  -d "{
+    \"user_id\": \"${userId}\"
+}" | jq -r '.id')
+
+curl -X POST "https://api.clerk.com/v1/sessions/${sessionId}/tokens" \
+  -H "Authorization: Bearer ${secretKey}" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "expires_in_seconds": 3600
+}' | jq -r .jwt
+
+# see https://clerk.com/docs/reference/backend-api/tag/Sessions#operation/createSession
+# see https://clerk.com/docs/reference/backend-api/tag/Sessions#operation/CreateSessionToken
