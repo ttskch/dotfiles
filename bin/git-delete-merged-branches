@@ -1,14 +1,8 @@
 #!/bin/sh -eu
 
-#git branch --merged | grep -vE '^\*|master$|main$|develop$' | xargs -I % git branch -d %
+# for merge commit
+git branch --merged | grep -vE '^\*|master$|main$|develop$' | xargs git branch -d
 
-git checkout -q main && \
-  git for-each-ref refs/heads/ "--format=%(refname:short)" | \
-  while read branch; do
-    mergeBase=$(git merge-base main $branch) && \
-      [[ $(git cherry main $(git commit-tree $(git rev-parse $branch^{tree}) -p $mergeBase -m _)) == "-"* ]] && \
-      git branch -D $branch;
-done
-git checkout -
-
-# see https://ryym.tokyo/posts/delete-squash-merged-branch/
+# for squash merged
+# see https://qiita.com/P-man_Brown/items/cf97d4bd69e07b8df70a
+git pull --prune && git branch --format '%(refname:short) %(upstream:track)' | grep '\[gone\]' | awk '{print $1}' | xargs git branch -D
