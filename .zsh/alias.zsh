@@ -23,8 +23,6 @@ alias mysql="mysql --pager='less -S -n -i -F -X' --auto-rehash"
 alias pst="/Applications/PhpStorm.app/Contents/MacOS/phpstorm"
 alias chm="open -a \"Google Chrome\""
 alias diff="colordiff"
-alias ydla="youtube-dl -x --audio-format=mp3"
-alias ydlv="youtube-dl --format=mp4"
 alias it='(){ mv $1 ~/Music/iTunes/iTunes\ Media/Automatically\ Add\ to\ iTunes.localized/ }'
 alias brew-cask-cleanup='for c in /usr/local/Caskroom/*; do vl=(`ls -t $c`) && for v in "${vl[@]:1}"; do grm -rf "$c/$v"; done; done'
 alias ql='qlmanage -p "$@" >& /dev/null'
