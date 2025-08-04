@@ -62,3 +62,5 @@ WORDCHARS=''
 source ~/.zsh/env.zsh
 source ~/.zsh/alias.zsh
 source ~/.zsh/secret.zsh
+
+[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
