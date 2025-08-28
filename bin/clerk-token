@@ -8,7 +8,7 @@ sessionId=$(curl -X POST "https://api.clerk.com/v1/sessions" \
   -H "Content-Type: application/json" \
   -d "{
     \"user_id\": \"${userId}\"
-}" | jq -r '.id')
+}" | jq -r .id)
 
 curl -X POST "https://api.clerk.com/v1/sessions/${sessionId}/tokens" \
   -H "Authorization: Bearer ${secretKey}" \
