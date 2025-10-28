@@ -38,3 +38,4 @@ alias chrome='open -a "Google Chrome"'
 alias zenn-slug="php -r 'echo substr(md5(uniqid()), 0, 14);' | pbcopy"
 alias add-bom='(){ echo -ne "\xef\xbb\xbf" | cat - $1 > $1.bom.csv }'
 alias beep='for i in {1..3}; do afplay /System/Library/Sounds/Glass.aiff; done'
+alias lg="lazygit"
