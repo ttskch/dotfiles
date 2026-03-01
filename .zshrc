@@ -64,3 +64,9 @@ source ~/.zsh/alias.zsh
 source ~/.zsh/secret.zsh
 
 [[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
+
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/ttskch/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
