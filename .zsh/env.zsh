@@ -40,3 +40,7 @@ ulimit -n 1024 # avoid "Too many open files"
 
 # Task
 eval "$(task --completion zsh)"
+
+# git-wt
+eval "$(git wt --init zsh)"
+
