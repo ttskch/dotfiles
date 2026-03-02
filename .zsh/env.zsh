@@ -44,3 +44,8 @@ eval "$(task --completion zsh)"
 # git-wt
 eval "$(git wt --init zsh)"
 
+# Shift + Enter を Enter として処理
+# これにより、Ghostty/cmux のシェルで Shift + Enter で `;2;13~` が入力されることを防ぎつつ
+# Claude Codeなど独自の入力ハンドリングを持つTUIには Shift + Enter をそのまま送信できる
+# (Ghostty の設定ファイルで keybind を使って抑止してしまうと Claude Code にも Shift + Enter を入力できなくなる)
+bindkey '\e[27;2;13~' accept-line
