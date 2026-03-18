@@ -35,8 +35,8 @@
 	prr = !open -a \"Google Chrome\" https://github.com/$(gh repo view | head -1 | cut -f 2)/compare/release...$(git symbolic-ref --short HEAD)'?'expand=1
 	pf = push --force-with-lease
 	cl = clean -df
-	cc = "!git commit -m \"$(git diff --cached | claude -p 'この差分に対する簡潔な日本語のコミットメッセージを1行で書いて。先頭に一般的なコミットプレフィックスを付けて、あとはメッセージ本文のみを出力して。')\""
-	cce = "!git commit -m \"$(git diff --cached | claude -p 'この差分に対する簡潔な英語のコミットメッセージを1行で書いて。先頭に一般的なコミットプレフィックスを付けて、あとはメッセージ本文のみを出力して。')\""
+	cc = "!git commit -m \"$(git diff --cached | claude -p 'この差分に対する簡潔な日本語のコミットメッセージを1行で書いて。先頭に一般的なコミットプレフィックスを付けて、あとは余計なクオートなどもなしにメッセージ本文のみを出力して出力して。')\""
+	cce = "!git commit -m \"$(git diff --cached | claude -p 'この差分に対する簡潔な英語のコミットメッセージを1行で書いて。先頭に一般的なコミットプレフィックスを付けて、あとは余計なクオートなどもなしにメッセージ本文のみを出力して。')\""
 [merge]
 	tool = opendiff
 [push]
