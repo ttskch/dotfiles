@@ -5,3 +5,4 @@
 .phpintel
 start-local-server
 **/.claude/settings.local.json
+**/.claude/contexts/*
