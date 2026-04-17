@@ -9,6 +9,7 @@ export GEM_HOME=$HOME/.gem
 
 PATH=/usr/local/bin:/usr/bin:/usr/local/sbin:$PATH
 PATH=$HOME/bin:$PATH
+PATH=$HOME/.local/bin:$PATH # for Claude Code
 PATH=$HOME/.rbenv/bin:$PATH # for ruby from rbenv
 PATH=$HOME/.gem/bin:$PATH # for gems
 PATH=$HOME/ghq/github.com/flutter/flutter/bin:$PATH # for flutter
