@@ -40,3 +40,4 @@ alias add-bom='(){ echo -ne "\xef\xbb\xbf" | cat - $1 > $1.bom.csv }'
 alias beep='for i in {1..3}; do afplay /System/Library/Sounds/Glass.aiff; done'
 alias lg="lazygit"
 alias vidir='EDITOR="zed --wait" vidir'
+alias stripe='stripe --config /Users/ttskch/Dropbox/env/dotfiles/.config/stripe/config.toml'
