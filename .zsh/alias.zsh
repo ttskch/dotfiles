@@ -41,3 +41,4 @@ alias beep='for i in {1..3}; do afplay /System/Library/Sounds/Glass.aiff; done'
 alias lg="lazygit"
 alias vidir='EDITOR="zed --wait" vidir'
 alias stripe='stripe --config /Users/ttskch/Dropbox/env/dotfiles/.config/stripe/config.toml'
+alias yt-dlp='yt-dlp -t mp4'
