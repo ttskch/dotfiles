@@ -50,3 +50,9 @@ eval "$(git wt --init zsh)"
 # Claude Codeなど独自の入力ハンドリングを持つTUIには Shift + Enter をそのまま送信できる
 # (Ghostty の設定ファイルで keybind を使って抑止してしまうと Claude Code にも Shift + Enter を入力できなくなる)
 bindkey '\e[27;2;13~' accept-line
+
+# herdr
+if type 'herdr' > /dev/null 2>&1; then
+  eval "$(herdr completion zsh)"
+fi
+
