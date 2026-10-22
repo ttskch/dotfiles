@@ -5,16 +5,11 @@ export LANG="ja_JP.UTF-8"
 export JLESSCHARSET="japanese-sjis"
 export C_INCLUDE_PATH="/usr/include/"
 
-export GEM_HOME=$HOME/.gem
-
 PATH=/usr/local/bin:/usr/bin:/usr/local/sbin:$PATH
 PATH=$HOME/bin:$PATH
 PATH=$HOME/.local/bin:$PATH # for Claude Code
-PATH=$HOME/.rbenv/bin:$PATH # for ruby from rbenv
-PATH=$HOME/.gem/bin:$PATH # for gems
 PATH=$HOME/ghq/github.com/flutter/flutter/bin:$PATH # for flutter
 PATH=$HOME/.composer/vendor/bin:$PATH # for composer global packages
-PATH=$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH # for yarn global packages
 PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH" # for java
 PATH="/Applications/PhpStorm.app/Contents/MacOS:$PATH" # for PhpStorm Command-line Launcher
 PATH="/Applications/IntelliJ IDEA CE.app/Contents/MacOS:$PATH" # for IntelliJ IDEA Command-line Launcher
@@ -23,8 +18,6 @@ export PATH
 export CPPFLAGS="-I/opt/homebrew/opt/openjdk@17/include" # for java
 
 eval "$(/opt/homebrew/bin/brew shellenv)" # for homebrew
-eval "$(rbenv init -)" # for rbenv
-eval "$(pyenv init -)" # for pyenv
 eval "$(mise activate zsh)" # for mise
 
 . $(brew --prefix z)/etc/profile.d/z.sh # for z
